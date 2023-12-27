@@ -3,6 +3,10 @@
 import {  ShoppingCart } from "lucide-react";
 import { Sheet,SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./sheet";
 
+const itemCount = 0
+
+
+
 const Cart = () => {
   return (
     <Sheet>
@@ -19,9 +23,20 @@ const Cart = () => {
 
         <SheetHeader className="space-y-2.5 pr-6">
             <SheetTitle>
-            Cart(0)
+           {itemCount> 0 ? (
+            <>
+            <div className="flex w-full flex-col pr-6">
+              {/* {TODO: cart logic} */}
+              Cart Items
+            </div>
+            <div className="space-y-4 pr-6">
+              
+            </div>
+            </>
+           ):(<></>)}
             </SheetTitle>
         </SheetHeader>
+
       </SheetContent>
     </Sheet>
   );
