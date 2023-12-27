@@ -17,7 +17,7 @@ if (!cached) {
 }
 
 interface Args {
-  initOptions?: Partial<InitOptions>;
+  InitOptions?: Partial<InitOptions>;
 }
 
 export const getPayloadClient = async ({ InitOptions }: Args = {}) => {
