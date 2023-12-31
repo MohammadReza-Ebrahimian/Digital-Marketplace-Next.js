@@ -9,16 +9,12 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { AuthCredentialsValidator, TAuthCredentialValidator } from "@/lib/validators/account-credentials-validator";
-
-
-
+import {
+  AuthCredentialsValidator,
+  TAuthCredentialValidator,
+} from "@/lib/validators/account-credentials-validator";
 
 const Page = () => {
-
-
-
-
   const {
     register,
     handleSubmit,
@@ -27,14 +23,10 @@ const Page = () => {
     resolver: zodResolver(AuthCredentialsValidator),
   });
 
+  const onSubmit = ({ email, password }: TAuthCredentialValidator) => {
+    // send data to the server
 
-  const onSubmit = ({email,password}:TAuthCredentialValidator) =>{
-
-  }
-
-
-
-
+  };
 
   return (
     <>
@@ -60,7 +52,7 @@ const Page = () => {
                 <div className="grid gap-1 py-2">
                   <Label htmlFor="email">Email</Label>
                   <Input
-                  {...register("email")}
+                    {...register("email")}
                     placeholder="you@example.com"
                     className={cn({
                       "focus-visible:ring-red-500": errors.email,
@@ -70,7 +62,7 @@ const Page = () => {
                 <div className="grid gap-1 py-2">
                   <Label htmlFor="password">Password</Label>
                   <Input
-                  {...register("password")}
+                    {...register("password")}
                     placeholder="password"
                     className={cn({
                       "focus-visible:ring-red-500": errors.password,
